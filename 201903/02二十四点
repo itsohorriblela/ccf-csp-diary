@@ -1,4 +1,4 @@
-//20190302二十四点
+//20190302二十四点：将数据保存在堆栈中，如果是*/直接算出结果保存，如果是-将下一位保存为负数
 #include<stdio.h>
 #include<iostream>
 #include<cstring>
