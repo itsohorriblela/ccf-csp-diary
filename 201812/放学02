@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+typedef unsigned long long ull;
+
+int main(){
+    ull r,y,g,n;
+    ull t=0;
+    cin>>r>>y>>g;
+    cin>>n;
+    for (ull i = 0; i < n; i++)
+    {
+        ull tmp1,tmp2;
+        cin>>tmp1>>tmp2;
+        if (tmp1==0)
+        {
+            t=t+tmp2;
+        }else
+        if (tmp1==1)
+        {
+            ull rt=t%63;
+            ull tmp3=0;
+            tmp3=tmp2-rt;
+            if (tmp3>0)
+            {
+                t=t+tmp3;
+            }else
+            if (tmp3<-33)
+            {
+                t=t+tmp3+63;
+            }else
+            {
+                t=t;
+            }
+        }else
+        if (tmp1==2)
+        {
+            ull rt=t%63;
+            ull tmp3=0;
+            tmp3=tmp2-rt;
+            if ((tmp3<0)&&(tmp3>-30))
+            {
+                t=t+tmp3+30;
+            }
+        }else
+        if (tmp1==3)
+        {
+            ull rt=t%63;
+            ull tmp3=0;
+            tmp3=tmp2-rt;
+            if (tmp3<-3)
+            {
+                t=t+33+tmp3;
+            }
+        }
+    }
+    cout<<t;
+}
