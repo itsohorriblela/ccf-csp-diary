@@ -15,8 +15,15 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
     std::array<std :: string, 5> words {"one", "two","three", "four", "five"};
     std::vector<std::string> words_copy {std::begin(words) , std::end(words)};//用words来初始化words_copy
     
+    //2.vector的容量与大小
+    auto nElements = primes.size();//可用auto关键字方便保存大小和容量
     ![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/valuesofvector.jpg)
     
+    //3.常用方法
+    values[0] = 3.14159;//像标准数组一样通过索引访问元素
+    values.front() = 3.14159;
+    values.back() = 2.71828;//成员函数 front() 和 back() 分別返回序列中第一个和最后一个元素的引用
+    auto pData = values.data();//成员函数 data() 返回一个指向数组的指针，它在内部被用来存储元素。pData 是 type* 类型
     
     //2.常用操作方法
     vec1.push_back(100);            //添加元素
