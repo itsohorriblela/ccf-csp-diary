@@ -1,0 +1,14 @@
+头文件#include<array>
+//1.初始化
+array<double, 100> data {}; //全部初始化为0.0
+array<double, 10> values {0.5, 1.0, 1.5, 2.0};//{0.5,1.0，1.5,2.0,0.0,0.0,0.0,0.0,0.0}
+values.fill(3.1415926);//全部元素初始化为3.1415926
+
+//2.访问
+values.size() ;//返回元素个数
+values.empty();//返回是否为空
+front();//返回第一个元素
+back();//返回最后一个元素
+get<n>(name);//获取name容器的第n个元素
+auto first = std::begin(height_ins);
+auto last = std::end (height_ins);//成员函数 begin() 和 end()，分别返回指向第一个元素和最后一个元素的下一个位置的随机访问迭代器。
