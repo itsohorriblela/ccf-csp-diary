@@ -7,11 +7,15 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
 完美解决了菜鸡王少奇每次想定义 int n;cin>>n;int a[n];的问题。
 
     //1.定义和初始化
-    vector<int> vec1;    //默认初始化，vec1为空
-    vector<int> vec2(vec1);  //使用vec1初始化vec2
-    vector<int> vec3(vec1.begin(),vec1.end());//使用vec1初始化vec2
+    与stack初始化类似 
+    vector<type> namestd::vector<double> values(20);    //默认初始化，初始值都为0
+    std::vector<long> numbers(20, 99L); //将所有值都初始化为99L
+    std::vector<unsigned int> primes {2u, 3u, 5u, 7u, 11u, 13u, 17u, 19u};//初始化列表
     vector<int> vec[100];    //每一个vec[i]是vector类型，vec[100]相当于一个二维数组。
-    与stack初始化类似 vector<type> name
+    std::array<std :: string, 5> words {"one", "two","three", "four", "five"};
+    std::vector<std::string> words_copy {std::begin(words) , std::end(words)};//用words来初始化words_copy
+    
+    ![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/valuesofvector.jpg)
     
     
     //2.常用操作方法
