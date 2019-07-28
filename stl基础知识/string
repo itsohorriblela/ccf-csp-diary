@@ -1,0 +1,4 @@
+#include<string>
+//1.初始化
+string stuff;
+cin >> stuff;
