@@ -19,29 +19,31 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
     auto nElements = primes.size();//可用auto关键字方便保存大小和容量
     ![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/valuesofvector.jpg)
     
-    //3.常用方法
+    //3.访问元素
     values[0] = 3.14159;//像标准数组一样通过索引访问元素
     values.front() = 3.14159;
     values.back() = 2.71828;//成员函数 front() 和 back() 分別返回序列中第一个和最后一个元素的引用
     auto pData = values.data();//成员函数 data() 返回一个指向数组的指针，它在内部被用来存储元素。pData 是 type* 类型
+    
+    //4.插入元素
     copy();//迭代器？
     values.push_back(3.1415926);// push_back() 函数在序列末尾添加一个元素
+    std::string str {"alleged"};
+    words.emplace_back(str, 2, 3);//Create string object corresponding to "leg" in place构造函数会生成一个从索引 2 幵始、包含 str 中三个字符的子串。
+    auto iter = words.emplace(++std::begin(words),5,'A');// Inserts string(5,'A') as 2nd element
+    words.emplace(++iter, "$$$$");//Inserts string ("$$$$") as 3rd element
+    auto iter = words.insert(++std::begin(words), "two");//在第一个元素后面插入two
+    std:: string more[] {"five", "six", "seven" }; 
+    iter = words.insert(--std::end(words) , std::begin(more), std::end(more));//在最后一个元素前插入more数组
+    iter = words.insert(std::end(words), "ten");//在最后一个元素后插入ten
+    iter = words.insert(std::cend(words)-1, 2, "nine");//在最后一个元素前插入两个“nine”元素
     
-    //2.常用操作方法
-    vec1.push_back(100);            //添加元素
-    int size = vec1.size();         //元素个数
-    bool isEmpty = vec1.empty();    //判断是否为空
-    cout<<vec1[0]<<endl;        //取得第一个元素
-    vec1.insert(vec1.end(),5,3);    //从vec1.back位置插入个值为的元素
-    //vec1.pop_back();              //删除末尾元素
-    //vec1.erase(vec1.begin(),vec1.end());//删除之间的元素，其他元素前移
-    cout<<(vec1==vec2)?true:false;  //判断是否相等==、！=、>=、<=...
-    //vec1.clear();                 //清空元素
+    //5.删除元素
+    value.clear();//删除所有元素
+    value.pop_back();//删除尾部元素
+    auto iter = data.erase(std::begin(data)+1); //用erase()函数删除单个元素，此句删除第二个元素
+    auto iter = data.erase(std::begin(data)+1,std::begin(data)+3);//用erase()函数删除第二个和第三个元素
+    std::vector<std::string> words { "one", "none","some", "all”, "none", "most","many"};
+    auto iter = std::remove(std::begin(words), std::end(words), "none");//通过移动被删除元素右边的元素来覆盖被删除元素以达到删除效果
+    ![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/remove().jpg)
     
-    //3.遍历
-       int length = vec1.size();
-    for(int i=0;i<length;i++)
-    {
-       cout<<vec1[i];
-    }
-    cout<<endl<<endl;
