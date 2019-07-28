@@ -24,6 +24,8 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
     values.front() = 3.14159;
     values.back() = 2.71828;//成员函数 front() 和 back() 分別返回序列中第一个和最后一个元素的引用
     auto pData = values.data();//成员函数 data() 返回一个指向数组的指针，它在内部被用来存储元素。pData 是 type* 类型
+    copy();//迭代器？
+    values.push_back(3.1415926);// push_back() 函数在序列末尾添加一个元素
     
     //2.常用操作方法
     vec1.push_back(100);            //添加元素
