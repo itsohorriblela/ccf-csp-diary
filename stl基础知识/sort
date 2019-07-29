@@ -1,0 +1,4 @@
+std::vector<int> numbers {99, 77, 33, 66, 22, 11, 44, 88};
+std::sort(std::begin(numbers), std::end(numbers));
+默认升序排序，头文件#include <algorithm>
+sort() 只能接受 array、vector、deque 或标准数组中的元素。
