@@ -18,7 +18,7 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
     
     //2.vector的容量与大小
     auto nElements = primes.size();//可用auto关键字方便保存大小和容量
-    ![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/valuesofvector.jpg)
+![image](https://github.com/itsohorriblela/ccf-csp-diary/blob/master/images/valuesofvector.jpg)
     
     //3.访问元素
     values[0] = 3.14159;//像标准数组一样通过索引访问元素
