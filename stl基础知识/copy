@@ -1,6 +1,0 @@
-std::copy(start, end, std::back_inserter(container));
-//start和end是输入序列（假设有N各元素）的迭代器（iterator），container是一个容器，该容器的接口包含函数push_back。
-
-copy_n()
-//从源容器复制指定个数的元素到目的容器中。第一个参数是指向第一个源元素的输入迭代器，第二个参数是需要复制的元素的个数，第三个参数是指向目的容器的第一个
-位置的迭代器。
