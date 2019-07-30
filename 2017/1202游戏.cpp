@@ -1,69 +1,29 @@
-//运行超时
+//采用双向队列，用一个flag标记每轮的报数（因为报数不用保存，用完+1到下一轮就可以了），每轮把队列第一个数取出来，如果不符合条件放入队尾，直到剩下最后一个数
+//注意empty（）要写成员函数deque.empty(),empty(deque)会导致编译错误，csp用的编译器太垃圾了
 #include<iostream>
 using namespace std;
+#include<deque>
 
 int main(){
     int n,k;
     cin>>n>>k;
-    int flag=n;//flag represent 删掉了多少数字.flag=1输出答案
-    int jiashu=n;
-    struct FRIEND
-    {
-        int number,ans;//被删掉的数字ans=0，最后输出最后一个数字的ans
-        int time=0;//time represent第几次经过这个数。第二次经过会让加数-1
-    }friends[1000];
+    deque<int> numbers;
     for (int i = 1; i <= n; i++)
     {
-        friends[i].number=i;
-        friends[i].ans=i;
+        numbers.push_back(i);
     }
-    for (int i = 1; i <= n; i++)//循环从0开始还是从1开始不要变，因为跟角标有关
+    int flag=0;
+    int ans;
+    while (!numbers.empty())
     {
-        if ((friends[i].number%k==0)||(friends[i].number%10==k))//条件是且还是或要注意
+        flag++;
+        ans=numbers.front();
+        numbers.pop_front();
+        if ((flag%k!=0)&&(flag%10!=k))
         {
-            friends[i].ans=0;
-            friends[i].time++;
-            flag--;
+            numbers.push_back(ans);
         }
     }
-    while (flag!=1)
-    {
-        for (int i = 1; i <= n; i++)
-        {
-            if (friends[i].ans==0)
-            {
-                friends[i].time++;
-            }
-            else
-            if (friends[i].time==2)
-            {
-                jiashu--;
-            }
-            else
-            if (friends[i].ans!=0)
-            {
-                friends[i].number=friends[i].number+jiashu;
-                if ((friends[i].number%k==0)||(friends[i].number%10==k))
-                {
-                    friends[i].ans=0;
-                    friends[i].time++;
-                }
-                if (friends[i].time==1)
-                {
-                flag--;
-                }
-            }
-            
-        }
-        
-    }
-    for (int i = 1; i <= n; i++)
-    {
-        if (friends[i].ans!=0)
-        {
-            cout<<friends[i].ans;
-        }
-        
-    }
-    return 0;
+    cout<<ans;
+    return 0;    
 }
