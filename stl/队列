@@ -1,4 +1,4 @@
-deque 双向队列
+deque 双向队列 可以头插 头删 尾插 尾删
 //1.初始化 与vector一样
 deque<type> deque_name(10);
 deque<int> a_deque;
@@ -26,3 +26,6 @@ clear();
 words.assign({"seven”，"eight","nine"});//assign({初始化列表}),替换words队列中的元素
 words.assign(std::begin(wordset)+1, --std::end(wordset));//assign(迭代器)
 words.assign(8,"eight"); //Assign eight instances of string("eight")
+
+queue 队列 只能头删 尾插 想象一下超市排队的队列
+成员函数差不多 不赘述了
