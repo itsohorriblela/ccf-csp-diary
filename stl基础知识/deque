@@ -1,0 +1,28 @@
+deque 双向队列
+//1.初始化 与vector一样
+deque<type> deque_name(10);
+deque<int> a_deque;
+deque<int> a_deque(10);//初始值为0
+deque<std:: string> words { "one", "none", "some", "all", "none","most", "many” };//初始化列表
+deque<std::string> words_copy { words };//拷贝构造函数
+deque<std::string> words_part { std::begin(words),std::begin(words) + 5 };//利用已有的deque
+
+//2.访问元素
+cout<<word[2];// Output the third element in words
+cout << words.at(2);//利用at()函数使访问更加安全
+word.front();
+word.back();//与vector用法一致
+
+//3.处理元素
+push_back();
+pop_back();
+push_front();
+pop_front();
+emplace_back();
+emplace_front();
+insert();
+earse();//用两个迭代器确定范围
+clear();
+words.assign({"seven”，"eight","nine"});//assign({初始化列表}),替换words队列中的元素
+words.assign(std::begin(wordset)+1, --std::end(wordset));//assign(迭代器)
+words.assign(8,"eight"); //Assign eight instances of string("eight")
