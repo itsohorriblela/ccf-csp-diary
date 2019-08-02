@@ -1,0 +1,25 @@
+//水题
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n,k;
+    cin>>n>>k;
+    int cake[1000];
+    for (int i = 0; i < n; i++)
+    {
+        cin>>cake[i];
+    }
+    int ans=0;
+    int temp=0;
+    for (int i = 0; i < n-1; i++)
+    {
+        temp=temp+cake[i];
+        if (temp>=k)
+        {
+            ans++;
+            temp=0;
+        }
+    }
+    cout<<ans+1;
+}
