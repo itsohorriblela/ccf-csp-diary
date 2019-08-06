@@ -14,7 +14,7 @@ vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展
          back()
     插入 push_back()
          inseter(iterator,元素)
-    删除 erase(iterator)
+    删除 iterator=erase(iterator)//必须有返回值
 
 
     //1.定义和初始化
