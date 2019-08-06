@@ -6,6 +6,17 @@ vector<T> 容器是包含 T 类型元素的序列容器，vector<T> 容器的大
 vector<T> 代替数组存放元素。只要能够意识到，vector<T> 在扩展容量，以及在序列内部删除或添加元素时会产生一些开销；但大多数情况下，代码不会明显变慢。
 完美解决了菜鸡王少奇每次想定义 int n;cin>>n;int a[n];的问题。
 
+    精简总结
+    初始化 vector<int> name
+    迭代器 vector<int>::iterator it
+    访问 *iterator
+         front()
+         back()
+    插入 push_back()
+         inseter(iterator,元素)
+    删除 erase(iterator)
+
+
     //1.定义和初始化
     与stack初始化类似 
     vector<type> name  
