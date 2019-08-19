@@ -3,6 +3,9 @@ std::vector<int> numbers {99, 77, 33, 66, 22, 11, 44, 88};
 std::sort(std::begin(numbers), std::end(numbers));
 默认升序排序，头文件#include <algorithm>
 sort() 只能接受 array、vector、deque 或标准数组中的元素。
+降序或者结构体等数据类型怎么排序呢？
+提供一个用来比较元素的函数对象作为sort()的第三个元素
+
 
 std::copy(start, end, std::back_inserter(container));
 //start和end是输入序列（假设有N各元素）的迭代器（iterator），container是一个容器，该容器的接口包含函数push_back。
