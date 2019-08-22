@@ -1,54 +1,77 @@
 #include<iostream>
 using namespace std;
-typedef unsigned long long ull;
+typedef long long LL;
 
 int main(){
-    ull r,y,g,n;
-    ull ans=0;
+    int r,y,g;
     cin>>r>>y>>g;
-    cin>>n;
-    for (ull i = 0; i < n; i++)
+    int count;
+    cin>>count;
+    int status,time;
+    int tmp;
+    LL ans=0;
+    for (LL i = 0; i < count; i++)
     {
-        ull status,time;
         cin>>status>>time;
-        if (status==0)
+        switch (status)
         {
+        case 0:
             ans=ans+time;
-        }else
-        if (status==1)//red
-        {
-            ull rt=ans%(r+y+g);
-            ull tmp=0;
-            tmp=time-rt;
-            if (tmp>0)
+            break;
+        case 1:
+            tmp=ans;
+            tmp=tmp%(r+g+y);
+            if ((time-tmp)>0)
             {
-                ans=ans+tmp;
+                ans=ans+time-tmp;
             }else
-            if (tmp<-(g+y))
+            if ((time-tmp)>-(g+y))
             {
-                ans=ans+tmp+r+y+g;
+                ans=ans;
+            }else
+            if ((time-tmp)>-(r+y+g))
+            {
+                ans=ans+r-(tmp-y-g-time);
             }
-        }else
-        if (status==2)//yellow
-        {
-            ull rt=ans%(r+y+g);
-            ull tmp=0;
-            tmp=time-rt;
-            if ((tmp<0)&&(tmp>-(r)))
+            break;
+        case 3:
+            tmp=ans;
+            tmp=tmp%(r+g+y);
+            if ((time-tmp)>-y)
             {
-                ans=ans+tmp+(r);//30
+                ans=ans;
+                break;
+            }else
+            if ((time-tmp)>-(y+r))
+            {
+                ans=ans+r-(tmp-time-y);
+                break;
+            }else
+            if ((time-tmp)>-(r+y+g))
+            {
+                ans=ans;
+                break;
             }
-        }else
-        if (status==3)//green
-        {
-            ull rt=ans%(r+y+g);
-            ull tmp=0;
-            tmp=time-rt;
-            if (tmp<-(y))
+        case 2:
+            tmp=ans;
+            tmp=tmp%(r+g+y);
+            if ((time-tmp>0))
             {
-                ans=ans+(r+y)+tmp;//33
-             }
+                ans=ans;
+                break;
+            }else
+            if ((time-tmp)>-r)
+            {
+                ans=ans+r-(tmp-time);
+                break;
+            }else
+            if ((time-tmp)>-(r+g+y))
+            {
+                ans=ans;
+                break;
+            }
         }
     }
     cout<<ans;
+    return 0;
 }
